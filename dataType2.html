@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입-2</title>
+</head>
+<body>
+    
+    <script>
+        let a = 1;
+        let b = '1';
+        let c;
+        console.log(`a 변수의 값은` +a);
+        console.log(`a 변수의 값은 ${a}`);
+        //a 변수의 데이터타입은 ooo, b 데이터 타입은 ooo, c 데이터 타입은 ooo
+        console.log(`a 변수의 데이터타입은 ${typeof a}`, `b 변수의 데이터타입은 ${typeof b}`, `c 데이터 타입은 ${typeof c}`);
+        //a+b 변수를 묶은 데이터타입은 ooo
+        console.log(`a+b 변수를 묶은 데이터타입은 ${typeof (a+b)}`);  //a+b 변수를 묶은 데이터타입은 string
+        //a+c 변수를 묶은 데이터타입은 ooo
+        console.log(`a+c 변수를 묶은 데이터타입은 ${typeof (a+c)}`); //a+c 변수를 묶은 데이터타입은 number
+        console.log(`------------------------------------------`);
+        // 오늘의 총 지출을 표시해주는 가계부앱 만들기
+        // 커피 1500원
+        // 도시락 6000원
+        // 전철 2000원
+        // 오늘 총 지출액은 ooo원 입니다.
+        let coffee = 1500;
+        let food = 6000;
+        let moove = 2000;
+        console.log(`오늘 총 지출액은 ${(coffee + food + moove)}원 입니다`);
+        /* let coffee = 1500;
+        let food = 6000;
+        let moove = 2000;
+        let total = coffee + food + moove;
+        console.log(`오늘 총 지출액은 ${(total)}원 입니다`); */
+        console.log(`------------------------------------------`);
+        let dan99 = 2; //구구단 제작하기
+        console.log(`${dan99} x 1 = ${dan99*1}`);
+        console.log(`${dan99} x 2 = ${dan99*2}`);
+        console.log(`${dan99} x 3 = ${dan99*3}`);
+        console.log(`${dan99} x 4 = ${dan99*4}`);
+        console.log(`${dan99} x 5 = ${dan99*5}`);
+        console.log(`${dan99} x 6 = ${dan99*6}`);
+        console.log(`${dan99} x 7 = ${dan99*7}`);
+        console.log(`${dan99} x 8 = ${dan99*8}`);
+        console.log(`${dan99} x 9 = ${dan99*9}`);
+        console.log(`------------------------------------------`);
+        //월(Month) 체크하기!
+        let now = new Date(); //년월일시
+        console.log(now);
+
+        let mon = now.getMonth()+1;
+        let day = now.getDate();
+        let year = now.getFullYear();
+        console.log(mon, day, year);
+        //getMonth는 시작월을 0부터 시작한다. => 12월로 기재하고 싶으면 [let mon = now.getMonth()+1;]
+        //getDate는 시작일을 1부터 계산한다. => +1따로 써주지 않아도 됨
+        //*--------실습---------*
+        //오늘은 몇월 몇일입니다.
+        //ver1
+        console.log(`오늘은 ${mon}월 ${day}일입니다.`);
+        //ver2
+        console.log(`오늘은 ${now.getMonth()+1}월 ${now.getDate()}일입니다.`);
+        console.log(`------------------------------------------`);
+        //배열
+        //배열을 사용하지 않았을 때(같은 주제 기준 데이터가 2개 이상) 
+        let color1 = 'red';
+        let color2 = 'blue';
+        console.log(color1, color2);
+        //배열을 사용한 경우
+        //배열의 인덱스(자바스크립트의 데이터 순서)는 0부터 시작한다.
+        //배열의 length 문자열길이(개수)는 1부터 시작한다.
+        let colorSet = new Array('red', 'blue');
+        // let colorSet = ['red', 'blue', 'pink', 'white']
+        // let colorSet = new Array(4)
+        console.log(colorSet);
+        console.log(colorSet[0]); //배열[호출인덱스] => (값 = red)
+        console.log(colorSet[1]); // (값 = blue)
+        console.log(`------------------------------------------`);
+        // 배열 기초 연습
+        /* 1. 흰색, 검은색, 초록색, 노랑색, 파랑색, 빨강색, 보라색을 배열로 저장하고 그 중 좋아하는 색상을 4개 골라서 콘솔에 출력하세요. */
+        let colorAll = new Array('white','black','green','yellow','blue','red','Violet');
+        console.log(colorAll[0]); //white
+        console.log(colorAll[1]); //black
+        console.log(colorAll[4]); //blue
+        console.log(colorAll[6]); //Violet
+        console.log(`------------------------------------------`); //ver1
+        let colorSet2 = ['흰색','검은색','초록색','노랑색','파랑색','빨간색','보라색'];
+        console.log(colorSet2[0] + colorSet2[1] + colorSet2[4] + colorSet2[6])
+        console.log(`------------------------------------------`); //ver2
+        //*2. fruitList 변수 생성
+        //좋아하는 과일을 5개 저장하고 역순으로 출력하기
+        let fruitList = ['딸기','수박','메론','체리','샤인머스켓'];
+        console.log(fruitList[4] +' '+ fruitList[3]+' '+fruitList[2]+' '+fruitList[1]+' '+fruitList[0]); //+' '+ => 띄어쓰기 처리
+        console.log(`------------------------------------------`); //ver1
+        console.log(fruitList[4]);
+        console.log(fruitList[3]);
+        console.log(fruitList[2]);
+        console.log(fruitList[1]);
+        console.log(fruitList[0]);
+        console.log(`------------------------------------------`); //ver2
+        //new Array가 사용 되는 경우 = ex)영화관 빈좌석 선택할때 : 30좌석 
+    </script>
+</body>
+</html>

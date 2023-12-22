@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입-1</title>
+</head>
+<body>
+    
+    <script>
+        let a = 10;
+        let b = 5;
+        console.log(a);
+        console.log(typeof a); //string(문자) number(숫자)
+        console.log(typeof(a));
+        console.log(typeof (a+b)); //두개이상 타입을 보려면 괄호로 묶어주어야 한다. (값 = number)
+        console.log(typeof (a*b)); //변수값이 변동될 수 있으므로 10*5가 아닌 a*b로 적어야한다 (값 = number)
+        console.log(typeof b, a); //,는 영역을 나눠준다는 뜻으므로 (값 = number 10) 로 나온다
+        console.log(typeof a, typeof b); // 두개의 다입을 동시에 보고 싶으면 (값 = number number)
+        console.log('a=' + typeof a, 'b=' + typeof b); // (값 = a=number b=number)
+        //Q.a의 데이터 타입은 000다.
+        console.log('a의 데이터 타입은 '+typeof a+'다.'); // (값 = a의 데이터 타입은 number다.)
+        //Q.b의 데이터 타입은 000다.
+        console.log('b의 데이터 타입은 '+typeof b+'다.');// (값 = b의 데이터 타입은 number다.)
+        console.log('------------------------------')
+        let c = 'javascript';
+        let d = '3.14';
+        console.log(typeof c); 
+        console.log(typeof d);
+        console.log(typeof (a+d)); // 두개를 합쳤을 때 (숫자+문자) 계산이 안되므로 값이 문자로(string)처리된다. (값 = string)
+        //숫자+문자 = 문자
+        //숫자+숫자 = 숫자
+        //숫자+숫자+문자 = 문자
+        console.log(1+'1'); // (값 = 11 (typeof를 사용안함))
+        console.log(typeof (1+'1')); // (값 = string)
+        console.log('------------------------------')
+        let e = ''; //빈문자열 e에 대입
+        let f;
+        console.log(typeof e); // string
+        console.log(typeof f); //undefined
+        /* console.log(typeof g); */ //undefined => 있는지 없는지는 나오지 않으니 존재하지 않음의 undefined
+        /* console.log(g); */ //error => 값이 없으니 값대입이 안됐다는 error
+        //undefined(정의하지 않음) , null(값이 존재하지 않는다. 비어있다.)
+        let g = 1;
+        console.log(g+a); //(값 = 11)
+        console.log(g-b); //(값 = -4)
+        g = 0; //숫자를 초기화할 때 0이라는 값을 넣어준다.
+        g = null; //존재하는 변수 값을 제거해야할 때 사용
+        console.log(typeof g); //(값 = object) 객체라는 뜻
+        console.log(g); //(값 = null) 비어있다는 뜻
+
+        console.log(typeof (a+null)); // (값 = number)
+        console.log(typeof (b+undefined)); // (값 = number)
+
+        //Q. var, let, const 데이터 타입은? NO (없음. 데이터 값에 따라 되기 때문에)
+        //A. var, let, const 로 생성된 변수에 대입되는 값에 따라 데이터 타입이 결정된다.
+        //
+    </script>
+</body>
+</html>
