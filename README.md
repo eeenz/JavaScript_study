@@ -63,9 +63,37 @@
 * DOM Node 변수 지정 시
 `HTMLCollection` 결과는 변수가 정상인지 오류인지 간단한 확인 시에만 사용하고 실제로 DOM Node 변수를 동적인 결과를 만들어야 할때는 직접적인 접근으로 대상을 하나씩 개별인식하게 만들어야한다. [index] [ex) ul이 1개만 있더라도 선언할때 index[0]를 붙여준다.]
 ### getElementsByClassName (Class)
-* class는 중복사용 가능하므로 Element의 s를 붙여 사용한다. 
-* 또한 [ex)`const listClsLi = ulTag.getElementsByClassName('list');` `console.log(listClsLi);`] 
+* class는 중복사용 가능하므로 Element의 붙여 사용하며, 공통 Class의 부모 자식 자손 관계로 여러개를 갖으면 경로앞에 바로위 부모의 경로를 적어준다.  [ex)`const lnbCls = gnbCls.getElementsByClassName('lnb');` `console.log(lnbCls);`] 
 ### getElementById (Id)
 * id는 타이틀이 1개 이므로 부모의 경로를 적지 않아도 된다.
-* id는 1개 이므로 Element의 s를 붙여 사용하며, Tag가 부모 자식 자손 관계로 여러개를 갖으면 경로앞에 바로위 부모의 경로를 적어준다. [ex)`const listClsLi = ulTag.getElementsByClassName('list');` `console.log(listClsLi);`] 
+* id는 1개 이므로 Element의 s를 적지 않는다.
+### querySelector
+* querySelector는 태그가 여러개 있을 경우에도 바디를 읽을 때 첫 번째 대상만 잡아서 보여준다.
+* `const h1Tag = document.querySelector('h1');` `const titleCls = document.querySelector('.title')`
+* 자체에 class나 id나 tag를 나누는게 없어서()안에 적어줘야한다. [ex)class => .으로표기, id=> #으로표기, (= h1.title)]
+### querySelectorAll
+* `document.querySelectorAll('.list');` `console.log(listAll);``console.log(listAll[1]);`
+### Number
+* `Number`는 숫자가 문자열로 인식될 때 붙여주는 속성이다.
+* 예시1.`let num = Number(window.prompt('구입수량은?',''));`
+* 예시2. `console.log(Number(numInput.value));`
+* 암시적 형변환(자바스크립트가 개발자 동의없이 자동으로 형변환)되는 경우 Number를 사용해 문자열을 숫자로 변환해준다.
+[ex)`let age = Number(window.prompt('당신의 나이는?'));`]
+* `prompt`와 `form 태그에 삽입되는 값 속성(input, option, select, button, textarea)` 데이터값은 무조건 문자열로 처리되기 때문에 Number를 사용해 숫자로 변환이 필요하다.
+* NaN => Not a Number 라는 뜻
+### value
+* form 태그에 삽입되는 값 속성(input, option, select, button, textarea)
+* form 태그 내에 작성했을 땐 미리 입력된 값 표현 가능
+* javascript의 DOM.속성 `ex)DOM.value`로 처리했을 땐 해당 DOM의 미리 입력된 값부터 사용자가 입력하는 신규 값까지 모두 인식할 수 있다.
+1. 쇼핑몰 상품 수량
+2. 쇼핑몰의 총 주문 가격
+3. 예약페이지의 여행 인원 수 등등..
+* 주의사항 -> value속성은 form전용이므로 다른 태그일때 해당 값을 알고 싶다면 다른 속성 및 메서드를 사용해야 한다.
+* 주의사항 -> `DOM.value`로 처리 시 숫자를 쓰더라도 문자열(string)으로 인식하기 때문에 필요한 경우 `Number()` 로 메서드를 활용해 (Number)데이터 타입으로 변환해야 한다. [ex) `Number(객체.value())`]
+### 사용가능한 상황
+`객체.속성.메서드()`
+`객체.속성()`
+`메서드(객체.속성)`
+`메서드(객체.메서드)`
+`메서드(객체.속성.메서드)`
 ---------------------------
