@@ -52,3 +52,25 @@
 * index와 length = 두가지는 배열만의 속성이다. 객체에는 사용 불가하다.
 * 속성에 두가지 쓰고 싶으면 공백으로 띄어쓰기 후 사용 가능하다. 대신 ''로 묶어주어야 한다. [ex)'cat type':'코리안 숏헤어']
 * `delete` : 객체속성 제거 (속성을 제거하고 싶을 때 사용한다.)
+---------------------------
+## DOM(document Object Model)
+### gitElementsBtTagName 
+* 1. HTML에 TagNode가 2개 이상일 때 그 중 1개만 동적인 기능이 적용되어 DOM으로 등록이 필요한 거라면 변수 지정 시 [index] 설정하고 대입하기 (=>대괄호 사용x)
+[ex.
+    tag가 두개 있다.
+    `<h1>DOM-1</h1>`
+    `<h1>DOM-2</h1> `
+    h1의 [0]에 동적 기능 하고 싶으면
+    `const h1Tag = document.getElementsByTagName('h1')[0]`
+    `console.log(h1Tag);`]
+* 2. HTML에 TagNode가 2개 이상일 때 그 중 여러 개에 동적인 기능이 적용되어 DOM이 된다면 변수 지정 시는 [index] 없이 대입하고 (=>대괄호 사용o) 해당 DOM 변수 호출 시 필요한 경우 [index] 사용하기 
+[ex.
+    tag가 두개 있다.
+    `<h1>DOM-1</h1>`
+    `<h1>DOM-2</h1>` 
+    여러개 (2개이상)에 동적 기능 사용하고 싶으면 호출에 index사용한다.
+    `const h1Tag = document.getElementsByTagName('h1')`
+    `console.log(h1Tag[0]);`]
+* DOM Node 변수 지정 시
+`HTMLCollection` 결과는 변수가 정상인지 오류인지 간단한 확인 시에만 사용하고 실제로 DOM Node 변수를 동적인 결과를 만들어야 할때는 직접적인 접근으로 대상을 하나씩 개별인식하게 만들어야한다. [index] [ex) ul이 1개만 있더라도 선언할때 index[0]를 붙여준다.]
+---------------------------
