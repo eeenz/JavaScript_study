@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체중계만들기 | 과제</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <style>
+        .container { width: 380px; height: 280px; margin: 0 auto; margin-top: 50px; background-color: rgb(27, 27, 27);position: relative; padding: 5px 10px;}
+        .container h1 {font-size: 1.7rem; text-align: center; font-weight: 600; margin-top: 30px; color: #fff;}
+        .container p {text-align: center;color: #fff; margin: 6px 0 20px;}
+        .container ul {
+            background-color: rgb(128, 224, 248); padding: 20px 20px; }
+        .container ul #height {width:230px; margin-bottom: 10px; height: 30px; border: 1px solid #111;}
+        .container ul #weight {width:200px; margin-bottom: 10px; height: 30px; border: 1px solid #111;}
+        .container ul #goals {width:120px; height: 30px; border: 1px solid #111;}
+        .container #result {
+            background-color: #111; color: #fff;
+            width: 120px; height: 30px; font-size: 0.85rem; float: right; display: inline-block; position: absolute; right: 30px; bottom: 37px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>다이어트 체중계</h1>
+        <p>당신의 건강몸무게를 알아보세요!</p>
+        <ul>
+            <li>현재 키 : <input type="text" id="height">cm</li>
+            <li>현재 몸무게 : <input type="text" id="weight">kg</li>
+            <li>최종 목표 : <input type="text" id="goals"></li>
+        </ul>
+        <button type="button" id="result">결과보기</button>
+    </div>
+    <script src="./script/project1.js"></script>
+</body>
+</html>
