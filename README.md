@@ -115,9 +115,33 @@
 * 국가 코드별로 숫자를 변환해주는 메서드
 * 문자열이 문자로 처리 되므로 계산을 모두 마친 후 마지막 출력 경우에만 toLocaleString('')를 사용한다.
 ----------------------------
+## DOM 관계속성
 ### javascript에서 속성(css)를 동적으로 설정 할 때
 * 자바스크립트에서css를 적용할 땐 인라인 스타일로 적용된다.
 * 인라인 스타일은 모든 스타일 기준 가장 우선순위가 높으므로 기존 .css파일에 디자인 되어있는 속성이 있을 때 그 값보다 우선적용 된다.
-* 예시1) `(객체.객체.속성 = '속성:값; 속성:값;')` : 속성을 추가하면 기존 속성에 덮어쓰기 된다.
-* 예시2) `(객체.객체.속성.속성 = '값';)` : 속성을 추가하면 기존 속성에 추가가 된다.
+### DOM - parent 부모 관계속성
+1. parentNode 부모 노드, parentElement 부모 요소
+    - parentNode.parentNode 연속 사용 가능 (부모의 부모 잡기)
+    - 자식 또는 자손노드.parentElement (특정 자식의 부모 잡기)
+2. javascript에서  css 제어하기 -> style 속성
+    - DOM.관계.style = '속성:값; 속성:값; 속성:값;';
+    (* 위 style 2번 이상 생성 시 이전 송성:값 제거됨)
+    - DOM.관계.관계.style.속성 = '값';
+    (* 위 style 2번 이상 생성 시 기존 속성값에 이어서 추가됨)
+    - DOM.style.속성 = '값';
+    - 위 관계는 필요에 따라 선택 속성
+* 예시1) `aNode[0].parentNode.style = 'background-color:yellow; border:1px solid red';` : 아래에 속성을 추가하면 기존 속성값은 제거 된다.
+* 예시2) `aNode[0].parentNode.style.backgroundColor = 'yellow';` : 속성을 추가하면 기존 속성에 추가가 된다.
+###  DOM - Child 자식 관계속성
+* firstChild(공백포함 노드), firstElementChild(요소노드) : 첫번째 자식 속성
+* 예시)`console.log(items[0].firstChild);` (= #text) => 공백포함 인식한 첫번째 자식 노드
+* lastChild(공백포함 노드), lastElementChild(요소노드) : 마지막 자식 속성
+* 예시)`console.log(items[0].lastElementChild);` (= p.price) => 요소 노드 기준 마지막 자식
+###  DOM - Sibling 형제 관계속성
+* previousSibling(공백포함 노드), previousElementSibling(요소노드) : 이전형제 속성
+* 예시1) `console.log(item_h2.previousSibling);` (= #text) => 공백포함 인식한 이전형제
+* 예시2) `console.log(item_h2.previousElementSibling);` (= p.price) => 요소만 체크한 이전형제
+* nextSibling(공백포함 노드), nextElementSibling(요소노드) : 다음형제 속성
+* 예시1) `console.log(item_h2.nextSibling);` (= #text) => 공백포함 인식한 다음형제
+* 예시2) `console.log(item_h2.nextElementSibling);` (= p.price) => 요소만 체크한 다음형제
 ----------------------------
