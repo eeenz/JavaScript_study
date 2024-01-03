@@ -134,14 +134,14 @@
 * 예시2) `aNode[0].parentNode.style.backgroundColor = 'yellow';` : 속성을 추가하면 기존 속성에 추가가 된다.
 ###  Child - 자식 관계속성
 1. firstChild(공백포함 노드), firstElementChild(요소노드) : 첫번째 자식 속성
-- 예시)`console.log(items[0].firstChild);` (= #text) => 공백포함 인식한 첫번째 자식 노드
+    - 예시)`console.log(items[0].firstChild);` (= #text) => 공백포함 인식한 첫번째 자식 노드
 2. lastChild(공백포함 노드), lastElementChild(요소노드) : 마지막 자식 속성
-- 예시)`console.log(items[0].lastElementChild);` (= p.price) => 요소 노드 기준 마지막 자식
+    - 예시)`console.log(items[0].lastElementChild);` (= p.price) => 요소 노드 기준 마지막 자식
 ###  Sibling - 형제 관계속성
 1. previousSibling(공백포함 노드), previousElementSibling(요소노드) : 이전형제 속성
-- 예시1) `console.log(item_h2.previousSibling);` (= #text) => 공백포함 인식한 이전형제
-- 예시2) `console.log(item_h2.previousElementSibling);` (= p.price) => 요소만 체크한 이전형제
+    - 예시1) `console.log(item_h2.previousSibling);` (= #text) => 공백포함 인식한 이전형제
+    - 예시2) `console.log(item_h2.previousElementSibling);` (= p.price) => 요소만 체크한 이전형제
 2. nextSibling(공백포함 노드), nextElementSibling(요소노드) : 다음형제 속성
-- 예시1) `console.log(item_h2.nextSibling);` (= #text) => 공백포함 인식한 다음형제
-- 예시2) `console.log(item_h2.nextElementSibling);` (= p.price) => 요소만 체크한 다음형제
+    - 예시1) `console.log(item_h2.nextSibling);` (= #text) => 공백포함 인식한 다음형제
+    - 예시2) `console.log(item_h2.nextElementSibling);` (= p.price) => 요소만 체크한 다음형제
 ----------------------------
