@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cteateElement</title>
+    <style>
+        * {
+            /* reset의 기본값 적은 것 */
+            margin:0; padding: 0; line-height: 1.5;
+            font-size: 1.0rem; box-sizing: border-box;
+        }
+        h1 {text-align: center;}
+        #id_search {
+            width:500px; padding: 20px; margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        #id_search form:last-child {font-weight: 600; font-size: 0.85rem;}
+        #id_search form {display: flex; flex-flow: column nowrap;}
+        #id_search form > * {margin-bottom: 5px;}
+    </style>
+</head>
+<body>
+    <h1>아이디 찾기</h1>
+    <div id="id_search">
+        <!-- 인증번호가 틀렸습니다 표시 위치 (주변태그 고려 형제가 블록 = block) -->
+        <form action="#" method="post">
+            <span>
+                <input type="tel" name="country_code" id="country_code">
+                <input type="tel" name="tel_num" id="tel_num">
+            </span>
+            <button type="button" id="authentication_btn">인증번호 받기</button>
+            <input type="number" name="authentication_input" id="authentication_input" placeholder="인증번호 6자리 숫자 입력" maxlength="6">
+            <!-- 인증번호가 발송 되었습니다 표시 위치 (주변태그 고려 형제가 인라인 = inline)-->
+        </form>
+    </div>
+    <script src="./script/create-1.js"></script>
+</body>
+</html>

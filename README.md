@@ -145,3 +145,20 @@
     - 예시1) `console.log(item_h2.nextSibling);` (= #text) => 공백포함 인식한 다음형제
     - 예시2) `console.log(item_h2.nextElementSibling);` (= p.price) => 요소만 체크한 다음형제
 ----------------------------
+# 객체.innerHTML(-> 속성)
+* `객체.innerHTML;` : 특정 객체의 자식, 자손 HTML 읽기
+* `객체.innerHTML = 값;` : HTML 삽입 및 변경
+# innerText(-> 속성)
+* `객체.innerText;` : 객체의 자식, 자손 텍스트 노드 읽기 (HTML x)
+* `객체.innerText = 값;` : 텍스트 노드 삽입 및 변경 (HTML x)
+# appendChild(-> 메서드)
+* `객체.appendChild()`
+* `객체.객체.appendChild()`
+* `객체.속성.appendChild()`
+* `객체.속성.속성.appendChild()`
+* 객체의 마지막 자식 노드 위치에 `()` 괄호 안 값 추가
+* 예시) `error.appendChild(error_create);`
+# createElement(-> 메서드)
+* `document.createElement()`
+* 요소 노드 자바스크립트 내에서 동적인 용도로 생성 할 경우
+* 예시) `error_create.innerHTML += "<li>아이디를 입력하세요</li>";`

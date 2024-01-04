@@ -1,0 +1,41 @@
+/* layout */
+main {
+    background-color: aqua;
+    width: 1136px; padding: 50px 0 0; margin: 0 auto;
+}
+main .item_detail {display: flex;}
+main .item_detail .left_thumbnail {
+    background-color: pink; width: calc(100% - 481px);
+    display: flex; flex-flow: row nowrap;
+}
+main .item_detail .right_container {
+    background-color: plum;
+    width:481px;
+}
+/* left_thumbnail */
+main .item_detail .left_thumbnail .small_thumbnail {
+    width:56px; display: flex; flex-flow: column nowrap;
+}
+main .item_detail .left_thumbnail .small_thumbnail a { 
+    margin-bottom: 6px;  width:56px; height: 56px;
+    border:3px solid #fff; border-radius: 6px;
+    overflow: hidden; /* 이미지 커졌을 때 넘치는 부분 없애주는것 많이 사용 */
+}
+main .item_detail .left_thumbnail .small_thumbnail a img {
+    width: 100%; transition: transform 0.2s; /* 썸네일 천천히 커지게 */
+}
+main .item_detail .left_thumbnail .big_thumbnail {
+    width:calc(100% - 56px); text-align: center;
+}
+main .item_detail .left_thumbnail .big_thumbnail img {
+    width:97%; border-radius: 10px;
+}
+/* left_thumbnail-hover */
+main .item_detail .left_thumbnail .small_thumbnail a:hover {
+    border:3px solid #35c5f0; 
+}
+main .item_detail .left_thumbnail .small_thumbnail a:hover > img {
+    transform:scale(1.2); /* 썸네일 마우스 올렸을 때 이미지 크게 되는 것 */
+} 
+/* right_container */
+/* right_container-form */

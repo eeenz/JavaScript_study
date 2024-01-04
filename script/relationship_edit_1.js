@@ -6,7 +6,7 @@
 const error = document.querySelector('#frm .error');
 const loginBtn = document.querySelector('#frm #loginBtn');
 const error_create = document.createElement('ul'); //1. 요소 자체를 자바스크립트에서 생성하는 방법
-console.log(error_create); // 2. (= p) <p></p>태그 생성됨 
+console.log(error_create); // 2. (= p) <p></p>태그 생성됨 확인
 console.log(error, loginBtn);
 
 //3. form의 마지막 자식 위치로 createElement로 생성한 노드 추가하기
